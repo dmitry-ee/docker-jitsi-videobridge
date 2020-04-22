@@ -1,0 +1,10 @@
+version: '3.0'
+
+services:
+  server:
+    container_name: jitsi-videobridge
+    image: dmi7ry/jitsi-videobridge:0.1.0
+    env_file: .env
+    network_mode: host
+    # ports:
+    #   - ${SERVER_PORT}:${SERVER_PORT}

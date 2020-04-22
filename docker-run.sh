@@ -21,6 +21,6 @@ docker run -d --rm --name jitsi-videobridge \
   dmi7ry/jitsi-videobridge:latest
 
 docker run -d --rm --name jitsi-videobridge-exporter \
-  --network=host
+  --network=host \
   -e EXPORTER_URL=http://localhost:8080/colibri/stats \
   dmi7ry/jitsi-videobridge-exporter:latest

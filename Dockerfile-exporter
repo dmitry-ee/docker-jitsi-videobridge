@@ -1,0 +1,5 @@
+FROM 	dmi7ry/prom-json-exporter
+COPY	exporter-config.yml /root/config.yml
+ENV 	EXPORTER_URL=http://localhost:8080/colibri/stats
+ENV		EXPORTER_CONFIG=/root/config.yml
+ENV		EXPORTER_SCRAPE_INTERVAL_SEC=30

@@ -23,6 +23,11 @@ build-nc: (_build "--no-cache")
 # docker build --no-cache --squash
 build-nc-sq: (_build "--no-cache --squash")
 
+build-exporter:
+  docker build -t "dmi7ry/jitsi-videobridge-exporter:0.0.1" -f Dockerfile-exporter .
+run-exporter:
+  docker run -d -p 7979:7979 --rm --name jitsi-videobridge-exporter "dmi7ry/jitsi-videobridge-exporter:0.0.1"
+
 
 # sh into container
 bash:

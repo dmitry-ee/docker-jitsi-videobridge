@@ -25,3 +25,9 @@ services:
       - SC_VIDEOBRIDGE_XMPP_USER_SHARD_MUC_JIDS=somevalue
       - SC_VIDEOBRIDGE_XMPP_USER_SHARD_DISABLE_CERTIFICATE_VERIFICATION=true
       - VIDEOBRIDGE_MAX_MEMORY=2048m
+  exporter:
+    container_name: jitsi-videobridge-exporter
+    image: dmi7ry/jitsi-videobridge-exporter:latest
+    network_mode: host
+    environment: 
+      - EXPORTER_URL=http://localhost:8080/colibri/stats

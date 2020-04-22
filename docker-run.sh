@@ -20,7 +20,7 @@ docker run -d --rm --name jitsi-videobridge \
   -e VIDEOBRIDGE_MAX_MEMORY=2048m \
   dmi7ry/jitsi-videobridge:latest
 
-docker run -d --r --name jitsi-videobridge-exporter \
+docker run -d --rm --name jitsi-videobridge-exporter \
   --network=host
   -e EXPORTER_URL=http://localhost:8080/colibri/stats \
   dmi7ry/jitsi-videobridge-exporter:latest

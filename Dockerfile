@@ -46,6 +46,7 @@ RUN  chmod +x docker-entrypoint.sh
 
 ARG BUILD_DATE
 ARG VERSION
+LABEL maintainer="https://github.com/dmitry-ee"
 
 VOLUME [ "/var/log/jitsi" ]
 

@@ -3,8 +3,25 @@ version: '3.0'
 services:
   server:
     container_name: jitsi-videobridge
-    image: dmi7ry/jitsi-videobridge:0.1.0
-    env_file: .env
+    image: dmi7ry/jitsi-videobridge:latest
+    mem_limit: 2048m
     network_mode: host
-    # ports:
-    #   - ${SERVER_PORT}:${SERVER_PORT}
+    # env_file: .env
+    environment: 
+      - VERBOSE=true
+      - XMPP_SECRET=somevalue
+      - XMPP_DOMAIN=none
+      - XMPP_HOST=localhost
+      - XMPP_PORT=5000
+      - XMPP_APIS=xmpp,rest
+      - SC_HARVEST_DISABLE_AWS_HARVESTER=true
+      - SC_HARVEST_STUN_MAPPING_HARVESTER_ADDRESSES=meet-jit-si-turnrelay.jitsi.net:443
+      - SC_VIDEOBRIDGE_ENABLE_STATISTICS=true
+      - SC_VIDEOBRIDGE_STATISTICS_TRANSPORT=muc
+      - SC_VIDEOBRIDGE_XMPP_USER_SHARD_HOSTNAME=somevalue
+      - SC_VIDEOBRIDGE_XMPP_USER_SHARD_DOMAIN=somevalue
+      - SC_VIDEOBRIDGE_XMPP_USER_SHARD_USERNAME=somevalue
+      - SC_VIDEOBRIDGE_XMPP_USER_SHARD_PASSWORD=somevalue
+      - SC_VIDEOBRIDGE_XMPP_USER_SHARD_MUC_JIDS=somevalue
+      - SC_VIDEOBRIDGE_XMPP_USER_SHARD_DISABLE_CERTIFICATE_VERIFICATION=true
+      - VIDEOBRIDGE_MAX_MEMORY=2048m

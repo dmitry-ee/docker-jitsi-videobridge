@@ -19,7 +19,9 @@ _build build_args="--no-cache":
 # docker build with cache with squash flag
 build-c: (_build "")
 # docker build --no-cache
-build-nc: (_build " --no-cache")
+build-nc: (_build "--no-cache")
+# docker build --no-cache --squash
+build-nc-sq: (_build "--no-cache --squash")
 
 
 # sh into container
@@ -34,6 +36,8 @@ compose-down:
 # docker logs
 logs:
   docker logs {{app_name}}
+inspect:
+  docker inspect {{app_name}}
 
 _run ARGS="":
   docker run {{ARGS}} --rm --name {{app_name}} {{docker_image_name}}
